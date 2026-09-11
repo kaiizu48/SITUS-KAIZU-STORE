@@ -1,2 +1,1102 @@
-# SITUS-KAIZU-STORE
-JUAL AKUN GAME FF,ML,COC
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>situs KAIIZU STORE</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:
+    radial-gradient(circle at top,#17134a,#090821 55%,#070618);
+    color:white;
+    min-height:100vh;
+}
+
+/* HEADER */
+header{
+    width:100%;
+    padding:20px 7%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    border-bottom:1px solid rgba(0,255,255,.2);
+    background:rgba(7,6,24,.8);
+    backdrop-filter:blur(10px);
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:bold;
+    color:#fff;
+}
+
+.logo span{
+    color:#00eaff;
+}
+
+.menu{
+    display:flex;
+    gap:20px;
+}
+
+.menu button{
+    background:none;
+    border:0;
+    color:white;
+    font-size:22px;
+    cursor:pointer;
+}
+
+/* HERO */
+.hero{
+    text-align:center;
+    padding:55px 20px 35px;
+}
+
+.hero h1{
+    font-size:42px;
+    letter-spacing:3px;
+    text-shadow:0 0 15px #00eaff;
+}
+
+.hero p{
+    margin-top:10px;
+    color:#aaa;
+    letter-spacing:2px;
+}
+
+/* SEARCH */
+.search{
+    max-width:600px;
+    margin:25px auto;
+    position:relative;
+}
+
+.search input{
+    width:100%;
+    padding:15px 20px;
+    border-radius:30px;
+    border:1px solid #00eaff;
+    outline:none;
+    background:#11102d;
+    color:white;
+    font-size:15px;
+    box-shadow:0 0 15px rgba(0,234,255,.2);
+}
+
+/* CATEGORY */
+.categories{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin:25px 0 45px;
+}
+
+.category{
+    padding:13px 25px;
+    border:1px solid #00eaff;
+    border-radius:30px;
+    background:#141332;
+    color:white;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.category:hover,
+.category.active{
+    background:#00eaff;
+    color:#07101c;
+    box-shadow:0 0 20px #00eaff;
+}
+
+/* CONTAINER */
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+}
+
+/* GAME SECTION */
+.game-section{
+    margin-bottom:55px;
+}
+
+.game-title{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    border:1px solid #00eaff;
+    border-radius:18px;
+    padding:20px 25px;
+    margin-bottom:20px;
+    background:rgba(15,16,52,.7);
+    box-shadow:0 0 15px rgba(0,234,255,.12);
+}
+
+.game-title h2{
+    font-size:24px;
+}
+
+.game-title span{
+    color:#00eaff;
+    font-size:13px;
+}
+
+/* PRODUCTS */
+.products{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.card{
+    background:#0d1030;
+    border:1px solid #433cff;
+    border-radius:18px;
+    overflow:hidden;
+    transition:.3s;
+    box-shadow:0 5px 20px rgba(0,0,0,.3);
+}
+
+.card:hover{
+    transform:translateY(-7px);
+    border-color:#00eaff;
+    box-shadow:0 0 25px rgba(0,234,255,.2);
+}
+
+/* IMAGE */
+.card-image{
+    width:100%;
+    height:180px;
+    position:relative;
+    background:#16153d;
+    overflow:hidden;
+}
+
+.card-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.favorite{
+    position:absolute;
+    top:12px;
+    right:12px;
+    width:36px;
+    height:36px;
+    border:0;
+    border-radius:50%;
+    background:rgba(0,0,0,.65);
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+}
+
+/* CARD CONTENT */
+.card-content{
+    padding:17px;
+}
+
+.badge{
+    display:inline-block;
+    padding:6px 12px;
+    border-radius:20px;
+    background:#743cff;
+    font-size:11px;
+    margin-bottom:10px;
+}
+
+.card h3{
+    font-size:17px;
+    margin-bottom:12px;
+}
+
+.info{
+    color:#aaa;
+    font-size:13px;
+    line-height:1.8;
+}
+
+.price{
+    margin-top:15px;
+    font-size:20px;
+    font-weight:bold;
+    color:#00eaff;
+}
+
+.buy{
+    width:100%;
+    margin-top:13px;
+    padding:12px;
+    border:1px solid #00eaff;
+    border-radius:10px;
+    background:transparent;
+    color:white;
+    cursor:pointer;
+    transition:.3s;
+    font-weight:bold;
+}
+
+.buy:hover{
+    background:#00eaff;
+    color:#07101c;
+}
+
+/* MODAL */
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.75);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    z-index:999;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-box{
+    width:100%;
+    max-width:450px;
+    background:#10102e;
+    border:1px solid #00eaff;
+    border-radius:20px;
+    padding:25px;
+    box-shadow:0 0 30px rgba(0,234,255,.3);
+}
+
+.modal-box h2{
+    margin-bottom:15px;
+}
+
+.modal-image{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    border-radius:12px;
+    margin-bottom:15px;
+}
+
+.close{
+    float:right;
+    background:none;
+    border:0;
+    color:white;
+    font-size:25px;
+    cursor:pointer;
+}
+
+.modal-info{
+    color:#aaa;
+    line-height:1.8;
+    font-size:14px;
+}
+
+.modal-price{
+    color:#00eaff;
+    font-size:23px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.whatsapp{
+    display:block;
+    width:100%;
+    padding:13px;
+    border-radius:10px;
+    background:#19c96b;
+    color:white;
+    text-align:center;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* FOOTER */
+footer{
+    margin-top:60px;
+    padding:30px;
+    text-align:center;
+    border-top:1px solid rgba(0,234,255,.2);
+    color:#777;
+    font-size:13px;
+}
+
+/* RESPONSIVE */
+@media(max-width:800px){
+
+    header{
+        padding:18px 5%;
+    }
+
+    .hero h1{
+        font-size:30px;
+    }
+
+    .products{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:550px){
+
+    .products{
+        grid-template-columns:1fr;
+    }
+
+    .card-image{
+        height:210px;
+    }
+
+    .game-title{
+        padding:17px;
+    }
+
+    .game-title h2{
+        font-size:19px;
+    }
+
+}
+</style>
+</head>
+
+
+<body>
+
+<!-- HEADER -->
+<header>
+
+    <div class="logo">
+        KAIIZU<span>STORE</span>
+    </div>
+
+    <div class="menu">
+        <button onclick="openCart()">🛒</button>
+        <button onclick="alert('Menu')">☰</button>
+    </div>
+
+</header>
+
+
+<!-- HERO -->
+<section class="hero">
+
+    <h1>JUAL BELI AKUN GAME</h1>
+
+    <p>
+        AKUN BERKUALITAS • HARGA TERJANGKAU • PROSES CEPAT
+    </p>
+
+    <div class="search">
+        <input
+            type="text"
+            id="search"
+            placeholder="🔍 Cari akun..."
+            onkeyup="searchProduct()"
+        >
+    </div>
+
+</section>
+
+
+<!-- CATEGORY -->
+<div class="categories">
+
+    <button
+        class="category active"
+        onclick="filterGame('all',this)">
+        🎮 SEMUA
+    </button>
+
+    <button
+        class="category"
+        onclick="filterGame('Free Fire',this)">
+        🔥 FREE FIRE
+    </button>
+
+    <button
+        class="category"
+        onclick="filterGame('Mobile Legends',this)">
+        ⚔️ MOBILE LEGENDS
+    </button>
+
+    <button
+        class="category"
+        onclick="filterGame('COC',this)">
+        🛡️ COC
+    </button>
+
+</div>
+
+
+<div class="container">
+
+    <!-- FREE FIRE -->
+    <section class="game-section">
+
+        <div class="game-title">
+
+            <div>
+                <h2>🔥 FREE FIRE</h2>
+                <span>Akun Free Fire Terpecaya</span>
+            </div>
+
+            <span>LIHAT SEMUA →</span>
+
+        </div>
+
+        <div
+            class="products"
+            id="freefire">
+        </div>
+
+    </section>
+
+
+    <!-- MOBILE LEGENDS -->
+    <section class="game-section">
+
+        <div class="game-title">
+
+            <div>
+                <h2>⚔️ MOBILE LEGENDS</h2>
+                <span>Akun Mobile Legends terpercaya</span>
+            </div>
+
+            <span>LIHAT SEMUA →</span>
+
+        </div>
+
+        <div
+            class="products"
+            id="mobilelegends">
+        </div>
+
+    </section>
+
+
+    <!-- COC -->
+    <section class="game-section">
+
+        <div class="game-title">
+
+            <div>
+                <h2>🛡️ CLASH OF CLANS</h2>
+                <span>Akun COC terbaik untuk kamu</span>
+            </div>
+
+            <span>LIHAT SEMUA →</span>
+
+        </div>
+
+        <div
+            class="products"
+            id="coc">
+        </div>
+
+    </section>
+
+</div>
+
+
+<!-- DETAIL MODAL -->
+<div
+    class="modal"
+    id="modal">
+
+    <div class="modal-box">
+
+        <button
+            class="close"
+            onclick="closeModal()">
+            ×
+        </button>
+
+        <img
+            id="modalImage"
+            class="modal-image"
+            src=""
+        >
+
+        <h2 id="modalTitle"></h2>
+
+        <div
+            id="modalInfo"
+            class="modal-info">
+        </div>
+
+        <div
+            id="modalPrice"
+            class="modal-price">
+        </div>
+
+        <a
+            class="whatsapp"
+            href="wa.me +628818508617"
+            id="whatsappLink"
+            target="wa.me +628818508617">
+
+            💬 BELI VIA WHATSAPP
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- CART MODAL -->
+<div
+    class="modal"
+    id="cartModal">
+
+    <div class="modal-box">
+
+        <button
+            class="close"
+            onclick="closeCart()">
+            ×
+        </button>
+
+        <h2>🛒 Keranjang</h2>
+
+        <div id="cartList">
+            Keranjang masih kosong.
+        </div>
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    © 2026 KAIIZUSTORE • JUAL BELI AKUN GAME
+
+</footer>
+
+
+<script>
+
+/* =================================
+   DATA AKUN
+================================= */
+
+const accounts = [
+
+    /* FREE FIRE */
+
+    {
+        id:989049794,
+        game:"Free Fire",
+        name:"STOK AKUN KAIIZU 1",
+        rank:"Gold",
+        level:"45",
+        item:"vault 61, skin senjata 75",
+        price:120000,
+
+        /* GANTI FOTO DI SINI */
+        image:"https://cdn.phototourl.com/free/2026-09-11-ab3f1643-27a4-4dd5-8c88-ea8340101147.jpg"
+    },
+
+    {
+        id:2,
+        game:"Free Fire",
+        name:"FF Epic Banyak Skin",
+        rank:"Epic",
+        level:"58",
+        item:"80+ Skin",
+        price:120000,
+
+        image:"https://images.unsplash.com/photo-1511512578047-dfb367046420?w=900"
+    },
+
+    {
+        id:3,
+        game:"Free Fire",
+        name:"FF Legend Full Item",
+        rank:"Legend",
+        level:"72",
+        item:"150+ Skin",
+        price:400000,
+
+        image:"https://images.unsplash.com/photo-1560253023-3ec5d502959f?w=900"
+    },
+
+
+    /* MOBILE LEGENDS */
+
+    {
+        id:4,
+        game:"Mobile Legends",
+        name:"MLBB Mythic Glory",
+        rank:"Mythic Glory",
+        level:"70",
+        item:"85+ Skin",
+        price:350000,
+
+        image:"https://images.unsplash.com/photo-1542751110-97427bbecf20?w=900"
+    },
+
+    {
+        id:5,
+        game:"Mobile Legends",
+        name:"MLBB Epic Banyak Skin",
+        rank:"Epic",
+        level:"45",
+        item:"40+ Skin",
+        price:150000,
+
+        image:"https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=900"
+    },
+
+    {
+        id:6,
+        game:"Mobile Legends",
+        name:"MLBB Legend Collector",
+        rank:"Legend",
+        level:"62",
+        item:"70+ Skin",
+        price:280000,
+
+        image:"https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=900"
+    },
+
+
+    /* COC */
+
+    {
+        id:7,
+        game:"COC",
+        name:"COC TH 13 Max",
+        rank:"Town Hall 13",
+        level:"Max",
+        item:"Hero Max",
+        price:450000,
+
+        image:"https://images.unsplash.com/photo-1606167668584-78701c57f13d?w=900"
+    },
+
+    {
+        id:8,
+        game:"COC",
+        name:"COC TH 12 Legend",
+        rank:"Town Hall 12",
+        level:"Max",
+        item:"Hero Max",
+        price:320000,
+
+        image:"https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=900"
+    },
+
+    {
+        id:9,
+        game:"COC",
+        name:"COC TH 11 Murah",
+        rank:"Town Hall 11",
+        level:"Max",
+        item:"40+ Item",
+        price:200000,
+
+        image:"https://images.unsplash.com/photo-1511512578047-dfb367046420?w=900"
+    }
+
+];
+
+
+let cart = [];
+
+
+/* =================================
+   FORMAT RUPIAH
+================================= */
+
+function rupiah(number){
+
+    return new Intl.NumberFormat(
+        "id-ID",
+        {
+            style:"currency",
+            currency:"IDR",
+            maximumFractionDigits:0
+        }
+    ).format(number);
+
+}
+
+
+/* =================================
+   BUAT CARD
+================================= */
+
+function createCard(account){
+
+    return `
+
+    <div class="card">
+
+        <div class="card-image">
+
+            <img
+                src="${account.image}"
+                alt="${account.name}"
+            >
+
+            <button
+                class="favorite"
+                onclick="favorite(this)">
+                ♡
+            </button>
+
+        </div>
+
+
+        <div class="card-content">
+
+            <span class="badge">
+                ${account.rank}
+            </span>
+
+            <h3>
+                ${account.name}
+            </h3>
+
+            <div class="info">
+
+                🎮 Game :
+                ${account.game}
+
+                <br>
+
+                🏆 Rank :
+                ${account.rank}
+
+                <br>
+
+                📊 Level :
+                ${account.level}
+
+                <br>
+
+                ✨ Item :
+                ${account.item}
+
+                <br>
+
+                🛡️ Akun Aman
+
+            </div>
+
+
+            <div class="price">
+                ${rupiah(account.price)}
+            </div>
+
+
+            <button
+                class="buy"
+                onclick="showDetail(${account.id})">
+
+                🛒 LIHAT DETAIL
+
+            </button>
+
+        </div>
+
+    </div>
+
+    `;
+
+}
+
+
+/* =================================
+   RENDER SEMUA PRODUK
+================================= */
+
+function renderProducts(data=accounts){
+
+    document.getElementById("freefire").innerHTML =
+        data
+        .filter(a=>a.game==="Free Fire")
+        .map(createCard)
+        .join("");
+
+
+    document.getElementById("mobilelegends").innerHTML =
+        data
+        .filter(a=>a.game==="Mobile Legends")
+        .map(createCard)
+        .join("");
+
+
+    document.getElementById("coc").innerHTML =
+        data
+        .filter(a=>a.game==="COC")
+        .map(createCard)
+        .join("");
+
+}
+
+
+/* =================================
+   FILTER GAME
+================================= */
+
+function filterGame(game,button){
+
+    document
+        .querySelectorAll(".category")
+        .forEach(btn=>{
+            btn.classList.remove("active");
+        });
+
+    button.classList.add("active");
+
+
+    if(game==="all"){
+
+        renderProducts(accounts);
+
+    }else{
+
+        renderProducts(
+            accounts.filter(
+                account=>account.game===game
+            )
+        );
+
+    }
+
+}
+
+
+/* =================================
+   SEARCH
+================================= */
+
+function searchProduct(){
+
+    const keyword =
+        document
+        .getElementById("search")
+        .value
+        .toLowerCase();
+
+
+    const result =
+        accounts.filter(account=>
+
+            account.name
+            .toLowerCase()
+            .includes(keyword)
+
+            ||
+
+            account.game
+            .toLowerCase()
+            .includes(keyword)
+
+            ||
+
+            account.rank
+            .toLowerCase()
+            .includes(keyword)
+
+        );
+
+
+    renderProducts(result);
+
+}
+
+
+/* =================================
+   DETAIL
+================================= */
+
+function showDetail(id){
+
+    const account =
+        accounts.find(a=>a.id===id);
+
+
+    document.getElementById("modalImage").src =
+        account.image;
+
+    document.getElementById("modalTitle").innerText =
+        account.name;
+
+
+    document.getElementById("modalInfo").innerHTML = `
+
+        🎮 Game : ${account.game}<br>
+        🏆 Rank : ${account.rank}<br>
+        📊 Level : ${account.level}<br>
+        ✨ Item : ${account.item}<br>
+        🛡️ Status : Akun Aman
+
+    `;
+
+
+    document.getElementById("modalPrice").innerText =
+        rupiah(account.price);
+
+
+    /*
+       GANTI NOMOR WHATSAPP TOKO
+       Contoh:
+       628818508617
+    */
+
+    const nomor =
+        "628818508617";
+
+
+    const pesan =
+        `Halo Admin, saya ingin membeli ${account.name} dengan harga ${rupiah(account.price)}`;
+
+
+    document.getElementById("whatsappLink").href =
+        `https://wa.me/${628818508617}? min stok 1,2,3 masih ada ga=${encodeURIComponent(pesan)}`;
+
+
+    document.getElementById("modal").classList.add("show");
+
+}
+
+
+/* =================================
+   CLOSE MODAL
+================================= */
+
+function closeModal(){
+
+    document
+        .getElementById("modal")
+        .classList.remove("show");
+
+}
+
+
+/* =================================
+   FAVORITE
+================================= */
+
+function favorite(button){
+
+    if(button.innerText==="♡"){
+
+        button.innerText="♥";
+
+    }else{
+
+        button.innerText="♡";
+
+    }
+
+}
+
+
+/* =================================
+   CART
+================================= */
+
+function addCart(id){
+
+    const account =
+        accounts.find(a=>a.id===id);
+
+    cart.push(account);
+
+}
+
+
+/* Untuk contoh ini tombol detail
+   langsung membuka detail akun. */
+
+
+/* =================================
+   CART BUTTON
+================================= */
+
+function openCart(){
+
+    const list =
+        document.getElementById("cartList");
+
+
+    if(cart.length===0){
+
+        list.innerHTML =
+            "🛒 Keranjang masih kosong.";
+
+    }else{
+
+        list.innerHTML =
+            cart.map(a=>`
+
+                <div style="
+                    padding:10px 0;
+                    border-bottom:1px solid #333;
+                ">
+
+                    <b>${a.name}</b>
+
+                    <br>
+
+                    <span style="color:#00eaff">
+                        ${rupiah(a.price)}
+                    </span>
+
+                </div>
+
+            `).join("");
+
+    }
+
+
+    document
+        .getElementById("cartModal")
+        .classList.add("show");
+
+}
+
+
+function closeCart(){
+
+    document
+        .getElementById("cartModal")
+        .classList.remove("show");
+
+}
+
+
+/* =================================
+   INIT
+================================= */
+
+renderProducts();
+
+</script>
+
+</body>
+</html>
